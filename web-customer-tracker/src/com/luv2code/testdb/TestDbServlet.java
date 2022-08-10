@@ -43,6 +43,7 @@ public class TestDbServlet extends HttpServlet {
 			
 			Class.forName(driver);
 			
+			@SuppressWarnings("unused")
 			Connection myConn = DriverManager.getConnection(jdbcUrl, user, password);
 			
 			out.println("CONNECTION SUCCESSFULL!");
