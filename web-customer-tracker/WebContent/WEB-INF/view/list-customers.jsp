@@ -39,14 +39,27 @@
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Action</th>
 				</tr>
 				<!-- loop over and print out customerList -->
 				<c:forEach var="customerList" items="${customerList }">
+					
+					<!-- construct an "update" link with EMBEDED customer id -->
+					
+					<c:url var="updateLink" value="/customer/showFormForUpdate">
+						<c:param name="customerId" value="${customerList.id }"></c:param>
+					
+					</c:url>
 				
 					<tr>
 						<td>${customerList.firstName }</td>
 						<td>${customerList.lastName }</td>
 						<td>${customerList.email }</td>
+												
+						<td>
+							<!-- display the update link, OVO CE EMBEDOVATI customerId I KAD SE KLIKNE NA UPDATE BUTTON PROSLEDICE NA SLEDECU I customerId -->
+							<a href="${updateLink }">Update</a>
+						</td>
 					</tr>
 				
 				</c:forEach>

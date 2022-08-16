@@ -42,12 +42,24 @@ public class CustomerDAOImpl implements ICustomerDAO {
 	public void saveCustomer(Customer theCustomer) {
 
 		// get current hibernate session
-		
 		Session session = sessionFactory.getCurrentSession();
 		
-		// save the customer
-		session.save(theCustomer);
+		// save or update the customer, UKOLIKO PROSLEDJENI OBJEKAT IMA ID ODRADICE UPDATE, UKOLIKO NEMA KREIRACE NOVI I POKRENUCE SAVE
+		session.saveOrUpdate(theCustomer);
 		
+	}
+
+
+	@Override
+	public Customer getCustomer(int theId) {
+
+		Session session = sessionFactory.getCurrentSession();
+		
+		// retrieve/read from database using the PK (u ovom slucaju int theId)
+		
+		Customer customerFromDb = session.get(Customer.class, theId);
+		
+		return customerFromDb;
 	}
 
 }
