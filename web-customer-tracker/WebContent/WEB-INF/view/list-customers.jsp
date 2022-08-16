@@ -44,11 +44,16 @@
 				<!-- loop over and print out customerList -->
 				<c:forEach var="customerList" items="${customerList }">
 					
-					<!-- construct an "update" link with EMBEDED customer id -->
+					<!-- construct an "update" link with EMBEDED customerId -->
 					
 					<c:url var="updateLink" value="/customer/showFormForUpdate">
 						<c:param name="customerId" value="${customerList.id }"></c:param>
+					</c:url>
 					
+					
+					<!-- construct an delete link with EMBEDED customerId -->
+					<c:url var="deleteLink" value="/customer/delete">
+						<c:param name="customerId" value="${customerList.id }"></c:param>
 					</c:url>
 				
 					<tr>
@@ -59,6 +64,9 @@
 						<td>
 							<!-- display the update link, OVO CE EMBEDOVATI customerId I KAD SE KLIKNE NA UPDATE BUTTON PROSLEDICE NA SLEDECU I customerId I BICE HIDDEN-->
 							<a href="${updateLink }">Update</a>
+							|
+							<a href="${deleteLink }"
+								onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
 						</td>
 					</tr>
 				

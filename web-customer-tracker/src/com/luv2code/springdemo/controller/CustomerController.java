@@ -82,6 +82,15 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
+	@GetMapping("/delete") // => value="/customer/delete" iz list-customers.jsp strane
+	public String deleteCustomer(@RequestParam("customerId") int theId) {
+		
+		//delete the customer
+		customerService.deleteCustomer(theId);
+		
+		return "redirect:/customer/list";
+	}
+	
 	
 	
 	
