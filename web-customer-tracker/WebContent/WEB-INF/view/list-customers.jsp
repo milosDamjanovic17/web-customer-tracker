@@ -57,7 +57,7 @@
 						<td>${customerList.email }</td>
 												
 						<td>
-							<!-- display the update link, OVO CE EMBEDOVATI customerId I KAD SE KLIKNE NA UPDATE BUTTON PROSLEDICE NA SLEDECU I customerId -->
+							<!-- display the update link, OVO CE EMBEDOVATI customerId I KAD SE KLIKNE NA UPDATE BUTTON PROSLEDICE NA SLEDECU I customerId I BICE HIDDEN-->
 							<a href="${updateLink }">Update</a>
 						</td>
 					</tr>
