@@ -5,6 +5,7 @@
   <absolute-ordering />
 
   <welcome-file-list>
+  	<!-- OVDE JE DEFINISANO KOJI JE FAJL USTVARI HOME PAGE -->
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
@@ -21,6 +22,7 @@
   
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
+    <!-- OVDE JE ZADATO DA CE HOME INDEX PAGE BITI "/" => localhost:8080/web-customer-tracker/	-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
